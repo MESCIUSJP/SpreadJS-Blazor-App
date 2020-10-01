@@ -1,0 +1,64 @@
+﻿@page "/"
+
+@using SpreadJS_Blazor_Lib
+
+<h1>Hello, SpreadJS!</h1>
+<table>
+    <tr>
+        <td>
+            <label>シート</label>
+            <input @bind-value="@SheetIndex" />
+        </td>
+        <td>
+            <label>行</label>
+            <input @bind-value="@Row" />
+        </td>
+        <td>
+            <label>列</label>
+            <input @bind-value="@Column" />
+        </td>
+        <td>
+            <lable>値</lable>
+            <input @bind-value="@Value" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button @onclick="doSomething">アップデート</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="file" @ref="inputFileEle" @onchange="ImportExcel" />
+        </td>
+    </tr>
+</table>
+<br />
+<SpreadJS SheetCount="3" HostStyle="@HostStyle" @ref="ss" />
+
+
+@code {
+    private SpreadJS ss;
+
+    private ElementReference inputFileEle;
+
+    public int SheetIndex { get; set; } = 0;
+
+    public int Row { get; set; } = 0;
+
+    public int Column { get; set; } = 0;
+
+    public string Value { get; set; } = "";
+
+    private string HostStyle { get; set; } = "width:90wh;height:70vh;border: 1px solid darkgray";
+
+    private void doSomething()
+    {
+        ss.setValue(SheetIndex, Row, Column, Value);
+    }
+
+    private void ImportExcel()
+    {
+        ss.OpenExcel(inputFileEle);
+    }
+}

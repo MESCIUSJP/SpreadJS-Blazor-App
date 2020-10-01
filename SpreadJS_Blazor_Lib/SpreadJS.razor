@@ -1,0 +1,38 @@
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+
+<div @ref="host"></div>
+
+@code {
+    [Parameter]
+    public int SheetCount { get; set; }
+
+    [Parameter]
+    public string HostStyle { get; set; }
+
+    private ElementReference host;
+
+    public void setValue(int sheetIndex, int row, int col, object value)
+    {
+        JSRuntime.InvokeVoidAsync("sjsAdaptor.setValue", host, sheetIndex, row, col, value);
+    }
+
+    public void OpenExcel(ElementReference inputFile)
+    {
+        JSRuntime.InvokeVoidAsync("sjsAdaptor.openExcel", host, inputFile);
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            JSRuntime.InvokeVoidAsync("sjsAdaptor.setCulture", "ja-jp");
+
+            JSRuntime.InvokeVoidAsync("sjsAdaptor.init", host, new Dictionary<string, object>() {
+            { "sheetCount", SheetCount},
+            { "hostStyle", HostStyle }
+        });
+        }
+    }
+}

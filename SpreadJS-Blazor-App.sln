@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadJS-Blazor-App", "SpreadJS-Blazor-App\SpreadJS-Blazor-App.csproj", "{0C1A3D1C-3C53-478F-A321-E72F131A44EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadJS_Blazor_Lib", "SpreadJS_Blazor_Lib\SpreadJS_Blazor_Lib.csproj", "{998576C8-DDA3-4FB3-9189-E86386BB5F63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C1A3D1C-3C53-478F-A321-E72F131A44EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1A3D1C-3C53-478F-A321-E72F131A44EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1A3D1C-3C53-478F-A321-E72F131A44EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1A3D1C-3C53-478F-A321-E72F131A44EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998576C8-DDA3-4FB3-9189-E86386BB5F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998576C8-DDA3-4FB3-9189-E86386BB5F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998576C8-DDA3-4FB3-9189-E86386BB5F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998576C8-DDA3-4FB3-9189-E86386BB5F63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C4A4537-60AE-49AB-99FA-F8FBF12B6E0A}
+	EndGlobalSection
+EndGlobal
